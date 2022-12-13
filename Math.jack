@@ -18,22 +18,45 @@ class Math {
     }
 
     /** Returns the product of x and y. 
-     *  When a Jack compiler detects the multiplication operator '*' in the 
-     *  program's code, it handles it by invoking this method. In other words,
-     *  the Jack expressions x*y and multiply(x,y) return the same value.
-     */
+        When a Jack compiler detects the multiplication operator '*' in the 
+        program's code, it handles it by invoking this method. In other words,
+        the Jack expressions x*y and multiply(x,y) return the same value.
+      */
     function int multiply(int x, int y) {
+        /* multiplication follows the bit shift addition algorithm:
+            add shifted versions of the larger multiplicand whenever bits of
+            the smaller multiplicand equal 1
+
+
+            multiply(x, y):
+                determine which is smaller, then assign that to y, other to x?
+
+                sum = 0
+                shiftedX = x
+                for i=0, w-1 do:
+                    if the iᵗʰ bit of y is 1:
+                        sum += shiftedX
+                    shiftedX *=2
+                return sum
+        */
+
+
     }
 
     /** Returns the integer part of x/y.
-     *  When a Jack compiler detects the multiplication operator '/' in the 
-     *  program's code, it handles it by invoking this method. In other words,
-     *  the Jack expressions x/y and divide(x,y) return the same value.
-     */
+        When a Jack compiler detects the multiplication operator '/' in the 
+        program's code, it handles it by invoking this method. In other words,
+        the Jack expressions x/y and divide(x,y) return the same value.
+      */
     function int divide(int x, int y) {
     }
 
-    /** Returns the integer part of the square root of x. */
+    /** Returns the integer part of the square root of x. 
+
+
+
+
+    */
     function int sqrt(int x) {
     }
 
