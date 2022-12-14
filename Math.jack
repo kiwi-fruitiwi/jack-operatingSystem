@@ -29,7 +29,10 @@ class Math {
 
 
             multiply(x, y):
-                determine which is smaller, then assign that to y, other to x?
+                /* determine which is smaller
+                    then assign that to y, other to x? */
+
+                /* how do we determine number of bits in y? */
 
                 sum = 0
                 shiftedX = x
@@ -53,11 +56,22 @@ class Math {
 
     /** Returns the integer part of the square root of x. 
 
-
-
-
-    */
+        Strategy: find integer y such that y² ≤ x < (y+1)² for 0 ≤ x < 2ⁿ by
+            performing binary search in range [0, 2^n/2 - 1]
+      */
     function int sqrt(int x) {
+        /*
+            def sqrt(x):
+                y = 0
+                find smallest 2ⁿ > x
+                for j = n/2 - 1 ... 0 do:
+                    if (y+2^j)² ≤ x and (y+2^j)² ≤ 0:
+                        // second condition is to check for overflow
+                        // two'ss complement overflow means negative numbers
+                        y = y + 2^j
+                return y
+
+        */
     }
 
     /** Returns the greater number. */
