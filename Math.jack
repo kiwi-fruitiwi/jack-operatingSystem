@@ -21,6 +21,11 @@ class Math {
         When a Jack compiler detects the multiplication operator '*' in the 
         program's code, it handles it by invoking this method. In other words,
         the Jack expressions x*y and multiply(x,y) return the same value.
+
+        Regardless of overflow, he binary shift addition algorithm always 
+        returns the correct answer modulo 2^16.
+
+        As long as the inputs are two's complement values, mult works as-is
       */
     function int multiply(int x, int y) {
         /* multiplication follows the bit shift addition algorithm:
@@ -37,6 +42,8 @@ class Math {
                 sum = 0
                 shiftedX = x
                 for i=0, w-1 do:
+
+                    // use bit(int x, int i)
                     if the iᵗʰ bit of y is 1:
                         sum += shiftedX
                     shiftedX *=2
@@ -52,6 +59,20 @@ class Math {
         the Jack expressions x/y and divide(x,y) return the same value.
       */
     function int divide(int x, int y) {
+        // handle negative numbers by dividing abs(x) by abs(y) → set sign
+
+        /* pseudocode
+            divide(x, y):
+                if y > x or y < 0: // overflow occurs when y is suddenly negative
+                    return 0
+
+                // this line can be rewritten x < (2q+1)*y to be more clear
+                if x - 2 * q * y < y:
+                    return 2 * q
+                else:
+                    return 2 * q + 1
+
+         */
     }
 
     /** Returns the integer part of the square root of x. 
