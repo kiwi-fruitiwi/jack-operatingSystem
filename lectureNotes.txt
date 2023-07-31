@@ -1,0 +1,20 @@
+⊼₂ OS lecture notes
+
+
+
+
+08:34 am Monday, July 31, 2023
+[0834]→	Unit 6.2: Efficiency Matters
+	
+
+08:31 am Monday, July 31, 2023
+[0831]→	Unit 6.1: Operating System
+	programmers need the support of the OS to encapsulate basic abstractions
+		keyboard and mouse i/o
+		arrays, text, and strings
+		basic graphics
+		memory management
+		networking
+	use bootstrapping technique like how unix came from C
+	the OS bridges the gaps between high-level language and low level hardware
+	explore beautiful algorithms but not focus too hard on efficiency
